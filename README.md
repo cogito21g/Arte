@@ -34,22 +34,53 @@ Arte is a personal AI assistant using speech recognition and natural language pr
 2. Create and activate a virtual environment:
     ```sh
     python3 -m venv arte_env
-    source arte_env/bin/activate
+    source arte_env/bin/activate  # macOS/Linux
+    .\arte_env\Scripts\activate   # Windows
     ```
 
 3. Install the required packages:
     ```sh
     pip install -r requirements.txt
+    pip install pyobjc  # For macOS users
     ```
+
+4. Download NLTK data:
+    ```python
+    import nltk
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    ```
+
 
 ## Usage
 
 1. Run the main script:
     ```sh
-    python src/main.py
+    cd src
+    python main.py
     ```
 
-2. Follow the voice instructions to interact with Arte.
+2. Follow the voice instructions to interact with Arte. Here are some example commands:
+
+- **Add event**: "Add event"
+  - Arte: "Please tell me the date of the event."
+  - User: "2024-06-15"
+  - Arte: "Please tell me the event details."
+  - User: "Doctor's appointment"
+
+- **Show events**: "Show events"
+  - Arte: "Please tell me the date of the events you want to see."
+  - User: "2024-06-15"
+
+- **Send email**: "Send email"
+  - Arte: "Please tell me the recipient's email address."
+  - User: "example@example.com"
+  - Arte: "Please tell me the subject of the email."
+  - User: "Meeting Schedule"
+  - Arte: "Please tell me the body of the email."
+  - User: "The meeting is scheduled for 3 PM tomorrow."
+
+- **Stop**: "Stop"
 
 ## Project Structure
 
@@ -80,7 +111,7 @@ arte/
 - **notebooks/**: Directory for Jupyter notebooks.
 - **src/**: Directory for source code.
   - **main.py**: Main script to run Arte.
-  - **speech_recognition.py**: Module for speech recognition.
+  - **speech_recognition_module.py**: Module for speech recognition.
   - **speech_synthesis.py**: Module for speech synthesis.
   - **nlp.py**: Module for natural language processing.
   - **scheduler.py**: Module for schedule management.
