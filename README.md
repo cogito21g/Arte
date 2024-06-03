@@ -56,12 +56,13 @@ Arte is a personal AI assistant using speech recognition and natural language pr
 ```
 arte/
 │
+├── LICENSE
 ├── README.md
 ├── requirements.txt
 ├── data/
 ├── notebooks/
 ├── src/
-│   ├── init.py
+│   ├── __init__.py
 │   ├── main.py
 │   ├── speech_recognition.py
 │   ├── speech_synthesis.py
@@ -69,8 +70,8 @@ arte/
 │   ├── scheduler.py
 │   └── email_manager.py
 └── tests/
-├── init.py
-└── test_jarvis.py
+    ├── __init__.py
+    └── test_arte.py
 ```
 
 - **README.md**: Project overview and instructions.
